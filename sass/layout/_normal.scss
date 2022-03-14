@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-right: 0 !important; //modal 開啟抖動bug
+  -webkit-overflow-scrolling: touch; // ios滑動效果
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-open {
+  overflow: initial !important; //modal 開啟抖動bug
+}
+
+button:active,
+button:focus,
+area:active,
+area:focus {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+}

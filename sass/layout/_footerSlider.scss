@@ -1,0 +1,41 @@
+// 引用時，footer增高
+.footer {
+  padding-bottom: 130px;
+  @include media($wide) {
+    padding-bottom: 11vw;
+  }
+  @include media($pad) {
+    padding-bottom: 19vw;
+  }
+}
+
+.right__box {
+  bottom: 140px;
+  @include media($wide) {
+    bottom: 13vw;
+  }
+  @include media($pad) {
+    bottom: 22vw;
+  }
+}
+
+.footer-slider {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 30;
+  padding: 10px;
+  background-color: rgba(#000, 0.8);
+  @include media($pad) {
+    padding: 0;
+  }
+
+  > .swiper {
+    max-width: 1200px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+}

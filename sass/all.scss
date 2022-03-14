@@ -1,0 +1,30 @@
+@import 'init';
+
+.pc {
+  @include media($pad) {
+    display: none;
+  }
+}
+
+.mb {
+  display: none;
+  @include media($pad) {
+    display: block;
+  }
+}
+
+.wrap {
+  &.rightNavFixed {
+    padding-top: 30px;
+  }
+}
+
+section {
+  height: 500px;
+  background-color: #ccc;
+  &:nth-child(odd) {
+    background-color: #888;
+  }
+}
+// system default
+@import 'layout/system';

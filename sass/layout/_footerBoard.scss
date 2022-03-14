@@ -1,0 +1,251 @@
+// 引用時，手機版底部增高、footer 社群 list 拿掉
+.footer {
+  @include media($pad) {
+    padding-bottom: 50px;
+    .social-info__list {
+      display: none;
+    }
+  }
+}
+
+// 回頂部按鈕加高
+.right__box {
+  @include media($pad) {
+    bottom: 70px;
+  }
+}
+
+// 手機版下方面版
+body.board--show {
+  overflow: hidden;
+}
+
+// 面版開啟時遮罩
+.wrap:after {
+  content: '';
+  display: block;
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  // board open
+  .board--show & {
+    display: block;
+    opacity: 1;
+  }
+}
+
+// 底部面版選單
+.footer-board {
+  position: fixed;
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background-image: linear-gradient(#ec1819, #c40011);
+  @include media($pad) {
+    display: flex;
+  }
+}
+
+// 底部面版選單 按鈕樣式
+.footer-board__btn {
+  > a {
+    padding: 6px 0 4px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #fff !important;
+    background-color: transparent !important;
+
+    span.txt {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 12px;
+
+      .ico {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 2px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+  }
+
+  // 面版按鈕
+  &[data-btn] > a {
+    pointer-events: none;
+  }
+}
+
+#MenuMobile {
+  position: static;
+  .footer-board__btn {
+    border-right: 1px solid #be0b11;
+  }
+  .col-6 {
+    position: static;
+  }
+}
+
+// 主會場按鈕
+#MainNavBarMobile .ico {
+  background-image: url(../img/source/icon-main.png);
+}
+
+// 分會場按鈕
+#SubNavBarMobile .ico {
+  background-image: url(../img/source/icon-sub.png);
+}
+
+// 自訂按鈕兩格
+.custom-footer .footer-board__btn {
+  &:first-child {
+    border-right: 1px solid #be0b11;
+    .ico {
+      background-image: url(../img/source/icon-count.png);
+    }
+  }
+
+  &:last-child {
+    .ico {
+      background-image: url(../img/source/icon-follow.png);
+    }
+  }
+}
+
+// 分會場選單
+[data-board] {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  z-index: 90;
+  background-color: #000;
+  transform: translateY(100%);
+
+  ul {
+    margin: 0;
+    padding: 10px 10px 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    opacity: 0;
+    transform: translateY(20%);
+
+    li {
+      padding: 0 6px;
+      margin-bottom: 8px;
+      max-width: 33.333333%;
+      flex: 0 0 33.333333%;
+
+      a {
+        padding: 4px 0;
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 20px;
+        border: 1px solid #fff;
+        transition: 0.2s;
+        &:active {
+          color: #fff02b;
+          border-color: #fff02b;
+        }
+      }
+    }
+  }
+}
+
+.board--close {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 80;
+  text-decoration: none !important;
+
+  &:before {
+    content: '';
+    width: 260px;
+    height: 130px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: 40;
+    background-color: #d7000f;
+    border-radius: 260px 260px 0 0;
+    transform: translate(-50%);
+    @include media($mobile) {
+      width: 240px;
+      height: 120px;
+      border-radius: 240px 240px 0 0;
+    }
+  }
+
+  p {
+    // margin-top: 4px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .board--icon {
+    padding-top: 12px;
+    position: relative;
+    z-index: 50;
+    text-align: center;
+    pointer-events: none;
+
+    img {
+      width: auto;
+      height: 20px;
+    }
+  }
+}
+
+.board2 {
+  ul {
+    padding: 10px 10% 10px;
+    transform: translateY(20%);
+    opacity: 0;
+    li {
+      flex: 0 0 25%;
+      max-width: 25%;
+      text-align: center;
+      margin-bottom: 0;
+      a {
+        display: block;
+        margin: 0 auto;
+        border-radius: 0;
+        border: none;
+        padding: 4px 0;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s;
+        img {
+          width: 42px;
+        }
+      }
+    }
+  }
+}

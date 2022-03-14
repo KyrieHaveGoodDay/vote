@@ -1,0 +1,142 @@
+// 底部貼紙 / 輪播圖寬(與上方列表同寬)
+$sticker-width: 120px;
+
+// 右選單
+.side-nav__right {
+  right: 0;
+
+  // 漢堡樣式
+  .side-nav__btn {
+    justify-content: end;
+
+    > a {
+      &::before {
+        transform: rotate(40deg);
+      }
+
+      &::after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+}
+
+// 下方面板選單
+.side-nav__right .side-nav__list {
+  li:not(:last-child) {
+    border-bottom: 1px solid #666;
+  }
+
+  a {
+    padding: 6px 15px;
+    border-right: 4px solid transparent;
+    &:hover {
+      border-color: $color-sideHover;
+      background-color: adjust-color($color-sideBg, $lightness: 10%);
+    }
+  }
+
+  // 輪播 & 圖片共用
+  .side-nav__img {
+    padding: 0;
+    width: $sticker-width;
+    border-right: none;
+
+    a {
+      padding: 0;
+      border-right: none;
+    }
+  }
+}
+
+// 關閉面版
+.side-nav__right.side-nav--hide {
+  // 漢堡樣式
+  .side-nav__btn > a {
+    &::before {
+      transform: rotate(-40deg);
+    }
+
+    &::after {
+      transform: rotate(40deg);
+    }
+  }
+
+  // 下方面版
+  .side-nav__list {
+    transform: translateX(200px);
+    height: 0;
+    pointer-events: none;
+  }
+}
+
+// RWD 768px 以下為上選單
+@include media($pad) {
+  .side-nav__right {
+    position: relative;
+    top: 0;
+    left: 0;
+    color: #888;
+    background-color: #fff;
+    text-align: center;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    .side-nav__btn {
+      display: none;
+    }
+
+    .side-nav__list {
+      font-size: 0;
+      white-space: nowrap;
+      color: #777;
+      background: inherit;
+      box-shadow: none;
+
+      > li {
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1;
+        background-color: transparent;
+        box-shadow: none;
+        border-bottom: none !important;
+
+        &:not(:first-child):after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 25%;
+          left: 0;
+          width: 0.5px;
+          height: 50%;
+          background-color: #888;
+        }
+
+        &.side-nav__img {
+          display: none;
+        }
+      }
+
+      a {
+        padding: 10px 12px;
+        color: #888;
+        border: none;
+        font-weight: 400;
+        &:hover,
+        &:active {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 0 6px rgba(#000, 0.2);
+      transition: 0.3s;
+    }
+  }
+}

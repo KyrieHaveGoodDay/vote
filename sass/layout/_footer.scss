@@ -1,0 +1,106 @@
+$color-bankInfoBg: #333333;
+$color-bankFont: #959595;
+$color-socialInfoBg: #000;
+
+.footer {
+  background-color: $color-bankInfoBg;
+  text-align: center;
+}
+
+// bank info
+.bank-info {
+  @include flexCenter();
+  padding: 15px 10px;
+  background-color: $color-bankInfoBg;
+  color: $color-bankFont;
+  @include media($padLg) {
+    display: block;
+  }
+
+  // bank title
+  &__title {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 15px 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 1px solid $color-bankFont;
+    @include media($padLg) {
+      margin-bottom: 6px;
+    }
+    @include media($mobile) {
+      font-size: 1.2rem;
+    }
+
+    span {
+      padding: 0 10px;
+      @include media($mobile) {
+        padding: 0 6px;
+      }
+    }
+  }
+
+  // bank text
+  &__text {
+    margin-bottom: 0;
+    text-align: left;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+    @include media($padLg) {
+      text-align: center;
+    }
+    @include media($mobile) {
+      font-size: 12px;
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+// social info
+.social-info {
+  padding: 15px 10px;
+  line-height: 1.75;
+  background-color: $color-socialInfoBg;
+  color: #fff;
+
+  // social icon
+  &__list {
+    @include flexCenter();
+    margin-bottom: 10px;
+    padding: 0;
+    @include media($mobile) {
+      margin-bottom: 5px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      padding: 0 3px;
+      display: inline-block;
+      font-size: 1rem;
+      @include media($mobile) {
+        font-size: 0.9rem;
+      }
+    }
+
+    img {
+      width: 40px;
+    }
+  }
+
+  // copyright
+  &__text {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+    @include media($mobile) {
+      font-size: 12px;
+      br {
+        display: none;
+      }
+    }
+  }
+}

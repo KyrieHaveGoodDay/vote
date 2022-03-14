@@ -1,0 +1,16 @@
+//utils
+@import 'utils/variable';
+
+//layout
+@import 'layout/normal';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/rightBtn';
+
+// side nav
+@import 'layout/sideNavUtils'; // 桌機 左右選單通用
+@import 'layout/rightNav'; // 桌手 右選
+@import 'layout/leftNav'; // 桌機 左選(後台)
+@import 'layout/footerBoard'; // 手機 底部面版(後台)
+// @import 'layout/footerSlider'; // 桌手 底部輪播
+@import 'layout/main';

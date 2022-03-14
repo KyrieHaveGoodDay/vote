@@ -1,0 +1,99 @@
+$color-Font: #fff;
+$color-FontHover: #fff;
+
+// 左選單
+.side-nav__left {
+  left: 0;
+
+  // 漢堡樣式
+  .side-nav__btn {
+    justify-content: start;
+
+    > a {
+      &::before {
+        transform: rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+  }
+  // 下方面板選單
+  .menu_box {
+    transition: 0.5s;
+  }
+}
+
+.side-nav__left .side-nav__list {
+  a {
+    padding: 5px;
+    font-size: 14px;
+    color: $color-Font;
+    &:hover {
+      color: $color-FontHover;
+      background-color: $color-sideHover;
+    }
+  }
+}
+
+// 分會場選單
+.s_sub__title {
+  position: relative;
+  padding: 6px 0px;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  background-color: rgba($color-sideBg, 0.9);
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 80%;
+    height: 1px;
+    background-color: #969696;
+  }
+}
+
+// 底部三色塊 + 回主會場
+.s_main {
+  .side-nav__list a {
+    padding: 0;
+  }
+
+  &__back {
+    @extend %link-block;
+    padding: 6px 0px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+    color: #95fff8;
+    text-decoration: none;
+    background-color: rgba($color-sideBg, 0.9);
+    transition: 0.5s;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+// 關閉面版
+.side-nav--hide.side-nav__left .menu_box {
+  transform: translateX(-200px);
+  height: 0;
+  pointer-events: none;
+}
+
+// 開關按鈕 漢堡樣式
+.side-nav__left.side-nav--hide .side-nav__btn > a {
+  &::before {
+    transform: rotate(40deg);
+  }
+
+  &::after {
+    transform: rotate(-40deg);
+  }
+}
