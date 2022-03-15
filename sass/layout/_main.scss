@@ -1,49 +1,59 @@
-.main{
-    background: rgb(228,64,63);
+.main {
+    background: rgb(228, 64, 63);
     padding: 50px 0;
-    @media screen and (max-width:768px){
+    @media screen and (max-width: 768px) {
         padding: 50px 15px;
-       }
+    }
 }
-.vote{
+.vote {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
     border-radius: 10px;
-    @media screen and (max-width:1200px){
+    @media screen and (max-width: 1200px) {
         width: 100%;
     }
-    .form_title{
+    .form_title {
         font-size: 24px;
         text-align: center;
     }
-    .too{
+    .too {
         text-align: center;
     }
-    form{
+    form {
         padding: 20px;
-        label{
+        label {
             font-size: 24px;
         }
-        select{
+        select {
             width: 100%;
             height: 30px;
             margin-bottom: 20px;
         }
-        input[type="text"]{
+        input[type="text"] {
             width: 100%;
         }
-        input[type="submit"]{
-            padding: 10px 50px;
-            border: 0;
-            border-radius: 10px;
-            display: block;
-            margin: 0 auto;
-            transition: 0.5s;
-            &:hover{
-                border: 1px solid #000;
-                background: #fff;
-            }
+        
+    }
+}
+
+// 勾勾
+.btn_send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input[type="submit"] {
+        padding: 10px 50px;
+        border: 0;
+        border-radius: 10px;
+        transition: 0.5s;
+       
+    }
+    .btn_pic{
+        display: inline-block;
+        img{
+            width: 45px;
+            height: 45px;
         }
     }
 }

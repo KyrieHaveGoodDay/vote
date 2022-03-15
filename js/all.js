@@ -240,11 +240,15 @@ $('#send').on('click', function (e) {
   setTimeout(function () {
     // console.log(memberOff);
     // console.log(todoOff);
+
+    // 判斷是否有會員
     if(memberOff){
       memberOff = false;
+      // 判斷是否投過票
       if(todoOff){
         // console.log('送出...');
         vote(NumID,district1,district2,district3,district4,district5)
+        alert('投票成功，謝謝')
       }else{
         alert('查詢後，您已經投過票了。')
         todoOff = true;
@@ -267,7 +271,7 @@ function checkNum(Numid) {
     for (item in mainNum) {
       // console.log(mainNum[item].datas);
       if (mainNum[item].datas == Numid) {
-        console.log('有一樣');
+        // console.log('有一樣');
         memberOff = true
         // console.log(memberOff);
 
@@ -293,7 +297,7 @@ function checkVote(Numid) {
     for (item in todoNum) {
       // console.log(todoNum[item].numm);
       if (todoNum[item].numm == Numid) {
-        console.log('有一樣');
+        // console.log('有一樣');
         todoOff = false
 
       }

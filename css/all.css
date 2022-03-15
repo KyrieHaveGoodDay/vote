@@ -994,19 +994,33 @@ body.board--show {
   width: 100%;
 }
 
-.vote form input[type="submit"] {
+.btn_send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn_send input[type="submit"] {
   padding: 10px 50px;
   border: 0;
   border-radius: 10px;
-  display: block;
-  margin: 0 auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.vote form input[type="submit"]:hover {
-  border: 1px solid #000;
-  background: #fff;
+.btn_send .btn_pic {
+  display: inline-block;
+}
+
+.btn_send .btn_pic img {
+  width: 45px;
+  height: 45px;
 }
 
 @media screen and (max-width: 767.98px) {
