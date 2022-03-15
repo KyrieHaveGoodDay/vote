@@ -235,12 +235,20 @@ $('#send').on('click',function(e){
   let district4 = $('#district4').val();
   let district5 = $('#district5').val();
   
+  checkNum(NumID)
+
+  
+  
+  
+})
+// 查詢會員
+function checkNum(Numid){
   member.once('value',function(snapshot){
     let mainNum = snapshot.val(); 
     
     for(item in mainNum){
       // console.log(mainNum[item].datas);
-      if(mainNum[item].datas == NumID){
+      if(mainNum[item].datas == Numid){
         console.log('有一樣');
         memberOff = true
         // console.log(memberOff);
@@ -249,32 +257,36 @@ $('#send').on('click',function(e){
     // 查詢會員
     if(memberOff){
       memberOff = false;
-      checkVote();
+      checkVote(Numid);
     }else{
       alert('查詢後，您沒有投票資格。')
     }
     
   })
+}
 
-  function checkVote(){
-    todos.once('value',function(snapshot){
-      let todoNum = snapshot.val(); 
-      for(item in todoNum){
+// 查詢是否已投票
+function checkVote(Numid){
+  todos.once('value',function(snapshot){
+    let todoNum = snapshot.val(); 
+    for(item in todoNum){
+      
+      if(todoNum[item].datas == Numid){
+        console.log('有一樣');
+        todoOff = true
         
-        if(todoNum[item].datas == NumID){
-          console.log('有一樣');
-          todoOff = true
-          
-        }
       }
+    }
 
-      if(todoOff){
-        todoOff = false;
-      }else{
-        alert('查詢後，您已經投過票了。')
-      }
+    if(todoOff){
+      todoOff = false;
+    }else{
+      alert('查詢後，您已經投過票了。')
+    }
 
-    })
-  }
+  })
+}
+// 投票
+function vote(Numid,d1,d2,d3,d4,d5){
   
-})
+}
