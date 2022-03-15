@@ -189,10 +189,14 @@ let app = firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 const db = firebase.database();
 
-// 會園區
+// 會員區
 let member = db.ref('mainNum');
+// 確認是否有會員
+let memberOff = false;
 // 投票區
 let todos = db.ref('todos');
+// 確認是否有投過
+let todoOff = false;
 
 // 結算統計投票
 // todos.once('value', function (snapshot) {
@@ -231,6 +235,46 @@ $('#send').on('click',function(e){
   let district4 = $('#district4').val();
   let district5 = $('#district5').val();
   
-  
+  member.once('value',function(snapshot){
+    let mainNum = snapshot.val(); 
+    
+    for(item in mainNum){
+      // console.log(mainNum[item].datas);
+      if(mainNum[item].datas == NumID){
+        console.log('有一樣');
+        memberOff = true
+        // console.log(memberOff);
+      }
+    }
+    // 查詢會員
+    if(memberOff){
+      memberOff = false;
+      checkVote();
+    }else{
+      alert('查詢後，您沒有投票資格。')
+    }
+    
+  })
+
+  function checkVote(){
+    todos.once('value',function(snapshot){
+      let todoNum = snapshot.val(); 
+      for(item in todoNum){
+        
+        if(todoNum[item].datas == NumID){
+          console.log('有一樣');
+          todoOff = true
+          
+        }
+      }
+
+      if(todoOff){
+        todoOff = false;
+      }else{
+        alert('查詢後，您已經投過票了。')
+      }
+
+    })
+  }
   
 })
