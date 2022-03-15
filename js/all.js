@@ -196,7 +196,7 @@ let memberOff = false;
 // 投票區
 let todos = db.ref('todos');
 // 確認是否有投過
-let todoOff = false;
+let todoOff = true;
 
 // 結算統計投票
 // todos.once('value', function (snapshot) {
@@ -213,7 +213,7 @@ let todoOff = false;
 
 //   const total_count = arrayData.reduce((obj, item) => {
 //     if (item in obj) {
-      
+
 //       obj[item]++
 //     } else {
 //       obj[item] = 1
@@ -226,7 +226,7 @@ let todoOff = false;
 
 
 // 取值
-$('#send').on('click',function(e){
+$('#send').on('click', function (e) {
   e.preventDefault();
   let NumID = $('#employeeID').val();
   let district1 = $('#district1').val();
@@ -234,59 +234,88 @@ $('#send').on('click',function(e){
   let district3 = $('#district3').val();
   let district4 = $('#district4').val();
   let district5 = $('#district5').val();
-  
-  checkNum(NumID)
 
-  
-  
-  
-})
-// 查詢會員
-function checkNum(Numid){
-  member.once('value',function(snapshot){
-    let mainNum = snapshot.val(); 
-    
-    for(item in mainNum){
-      // console.log(mainNum[item].datas);
-      if(mainNum[item].datas == Numid){
-        console.log('有一樣');
-        memberOff = true
-        // console.log(memberOff);
-      }
-    }
-    // 查詢會員
+  checkNum(NumID) 
+  checkVote(NumID) 
+  setTimeout(function () {
+    // console.log(memberOff);
+    // console.log(todoOff);
     if(memberOff){
       memberOff = false;
-      checkVote(Numid);
+      if(todoOff){
+        // console.log('送出...');
+        vote(NumID,district1,district2,district3,district4,district5)
+      }else{
+        alert('查詢後，您已經投過票了。')
+        todoOff = true;
+      }
     }else{
       alert('查詢後，您沒有投票資格。')
     }
+
     
+  }, 1000)
+  
+
+})
+
+// 查詢會員
+function checkNum(Numid) {
+  member.once('value', function (snapshot) {
+    let mainNum = snapshot.val();
+
+    for (item in mainNum) {
+      // console.log(mainNum[item].datas);
+      if (mainNum[item].datas == Numid) {
+        console.log('有一樣');
+        memberOff = true
+        // console.log(memberOff);
+
+      }
+    }
+    // 查詢會員
+    // if (memberOff) {
+    //   memberOff = false;
+    //   // checkVote(Numid);
+    // } else {
+    //   alert('查詢後，您沒有投票資格。')
+      
+    // }
+
   })
 }
 
 // 查詢是否已投票
-function checkVote(Numid){
-  todos.once('value',function(snapshot){
-    let todoNum = snapshot.val(); 
-    for(item in todoNum){
-      
-      if(todoNum[item].datas == Numid){
+function checkVote(Numid) {
+  todos.once('value', function (snapshot) {
+    let todoNum = snapshot.val();
+    // console.log(Numid);
+    for (item in todoNum) {
+      // console.log(todoNum[item].numm);
+      if (todoNum[item].numm == Numid) {
         console.log('有一樣');
-        todoOff = true
-        
+        todoOff = false
+
       }
     }
-
-    if(todoOff){
-      todoOff = false;
-    }else{
-      alert('查詢後，您已經投過票了。')
-    }
+    // console.log(todoOff);
+    // if (!todoOff) {
+    //   alert('查詢後，您已經投過票了。')
+    //   todoOff = true;
+    // } 
 
   })
 }
 // 投票
-function vote(Numid,d1,d2,d3,d4,d5){
-  
+function vote(Numid, d1, d2, d3, d4, d5) {
+  todos.push(
+    {
+      numm: Numid,
+      d_1: d1,
+      d_2: d2,
+      d_3: d3,
+      d_4: d4,
+      d_5: d5,
+    }
+  )
 }
