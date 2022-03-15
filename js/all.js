@@ -189,7 +189,9 @@ let app = firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 const db = firebase.database();
 
-
+// 會園區
+let member = db.ref('mainNum');
+// 投票區
 let todos = db.ref('todos');
 
 // 結算統計投票
@@ -217,3 +219,18 @@ let todos = db.ref('todos');
 
 //   console.log(total_count)
 // })
+
+
+// 取值
+$('#send').on('click',function(e){
+  e.preventDefault();
+  let NumID = $('#employeeID').val();
+  let district1 = $('#district1').val();
+  let district2 = $('#district2').val();
+  let district3 = $('#district3').val();
+  let district4 = $('#district4').val();
+  let district5 = $('#district5').val();
+  
+  
+  
+})
