@@ -1016,11 +1016,117 @@ body.board--show {
 
 .btn_send .btn_pic {
   display: inline-block;
+  position: relative;
+  border: 1px solid green;
+  overflow: hidden;
 }
 
 .btn_send .btn_pic img {
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
+}
+
+.btn_send .btn_pic .pic_left {
+  width: 23px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  opacity: 1;
+  -webkit-animation: lefts 2s linear;
+          animation: lefts 2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.btn_send .btn_pic .right_box {
+  position: absolute;
+  width: 23px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.btn_send .btn_pic .pic_right {
+  width: 23px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  opacity: 1;
+  -webkit-animation: rights 2s linear;
+          animation: rights 2s linear;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes lefts {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  99% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lefts {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  99% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes rights {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  99% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rights {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  99% {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
