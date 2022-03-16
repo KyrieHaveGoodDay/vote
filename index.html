@@ -221,8 +221,8 @@ var strImgDomain =  "//a.ecimg.tw" ;
     <div class="main">
       <div class="vote">
         <p class="form_title">請使用員工編號投票</p>
-        <p class="too">已投票人數 <span>1</span></p>
-        <form action="">
+        <p class="too">已投票人數 <span id="MainNum">0</span></p>
+        <form id="vote_form" action="">
           <label for="employeeID">你的員工編號：</label> <br>
           <input type="text" name="" id="employeeID" placeholder="請輸入員工編號"> <br>
           <label for="district1">第一區：</label> <br>
@@ -272,14 +272,15 @@ var strImgDomain =  "//a.ecimg.tw" ;
           </select><br>
           <div class="btn_send">
             <input type="submit" id="send" value="送出">
-            <div class="btn_chenk">
-              <div class="btn_pic">
+            <div id="btn_chenk" class="btn_chenk">
+              <!-- <div class="btn_pic">
                 <img src="img/check.png" alt="">
                 <div class="pic_left"></div>
                 <div class="right_box">
                   <div class="pic_right"></div>
                 </div>
-              </div>
+                <div class="hideCheck"></div>
+              </div> -->
             </div>
           </div>
         </form>

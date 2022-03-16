@@ -34,7 +34,7 @@
             width: 100%;
         }
         input[type="text"]::placeholder{
-            padding-left: 10px;
+            padding-left: 5px;
         }
         
     }
@@ -71,7 +71,7 @@
             background: #fff;
             transform-origin: 100% 50%;
             opacity: 1;
-            animation: lefts 2s linear;
+            animation: lefts 1s linear;
             animation-fill-mode: forwards;
         }
         .right_box{
@@ -92,8 +92,20 @@
             background: #fff;
             transform-origin: 0% 50%;
             opacity: 1;
-            animation: rights 2s linear;
-            animation-delay: 2s;
+            animation: rights 1s linear;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+        .hideCheck{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            top: 13px;
+            left: 13px;
+            animation: hideCk 1s linear;
+            opacity: 1;
+            animation-delay: 1s;
             animation-fill-mode: forwards;
         }
     }
@@ -118,6 +130,14 @@
     }
     99%{
         transform: rotate(-180deg);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes hideCk{
+    0%{
         opacity: 1;
     }
     100%{

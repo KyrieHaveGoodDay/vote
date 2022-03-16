@@ -995,19 +995,19 @@ body.board--show {
 }
 
 .vote form input[type="text"]::-webkit-input-placeholder {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .vote form input[type="text"]:-ms-input-placeholder {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .vote form input[type="text"]::-ms-input-placeholder {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .vote form input[type="text"]::placeholder {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .btn_send {
@@ -1051,8 +1051,8 @@ body.board--show {
   -webkit-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
   opacity: 1;
-  -webkit-animation: lefts 2s linear;
-          animation: lefts 2s linear;
+  -webkit-animation: lefts 1s linear;
+          animation: lefts 1s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1076,10 +1076,26 @@ body.board--show {
   -webkit-transform-origin: 0% 50%;
           transform-origin: 0% 50%;
   opacity: 1;
-  -webkit-animation: rights 2s linear;
-          animation: rights 2s linear;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation: rights 1s linear;
+          animation: rights 1s linear;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.btn_send .btn_pic .hideCheck {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  top: 13px;
+  left: 13px;
+  -webkit-animation: hideCk 1s linear;
+          animation: hideCk 1s linear;
+  opacity: 1;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1137,6 +1153,24 @@ body.board--show {
   99% {
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hideCk {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideCk {
+  0% {
     opacity: 1;
   }
   100% {

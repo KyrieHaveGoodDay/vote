@@ -198,31 +198,17 @@ let todos = db.ref('todos');
 // 確認是否有投過
 let todoOff = true;
 
-// 結算統計投票
-// todos.once('value', function (snapshot) {
-//   // console.log(snapshot.val());
-//   let arrayData = []
-//   let data = snapshot.val();
-//   for (item in data) {
-//     // console.log(data[item].d1);
-//     let datas = data[item].d2;
-//     arrayData.push(datas)
 
-//   }
-//   console.log(arrayData);
+// 已投幾人
+// 頁面載入統計?
+todos.once('value',function(snapshot){
+  let data = snapshot.val();
+  let dataNum = Object.keys(data).length;
+  console.log(dataNum);
+  let mainNum = document.getElementById('MainNum');
+  mainNum.innerText = dataNum;
+})
 
-//   const total_count = arrayData.reduce((obj, item) => {
-//     if (item in obj) {
-
-//       obj[item]++
-//     } else {
-//       obj[item] = 1
-//     }
-//     return obj
-//   }, {})
-
-//   console.log(total_count)
-// })
 
 
 // 取值
@@ -248,7 +234,7 @@ $('#send').on('click', function (e) {
       if(todoOff){
         // console.log('送出...');
         vote(NumID,district1,district2,district3,district4,district5)
-        alert('投票成功，謝謝')
+        // alert('投票成功，謝謝')
       }else{
         alert('查詢後，您已經投過票了。')
         todoOff = true;
@@ -312,6 +298,7 @@ function checkVote(Numid) {
 }
 // 投票
 function vote(Numid, d1, d2, d3, d4, d5) {
+ 
   todos.push(
     {
       numm: Numid,
@@ -321,5 +308,52 @@ function vote(Numid, d1, d2, d3, d4, d5) {
       d_4: d4,
       d_5: d5,
     }
-  )
+  ).then(function(){
+    // vote_form
+    $("#vote_form")[0].reset();
+    let str = `
+    <div class="btn_pic">
+    <img src="img/check.png" alt="">
+    <div class="pic_left"></div>
+    <div class="right_box">
+      <div class="pic_right"></div>
+    </div>
+    <div class="hideCheck"></div>
+  </div>
+    `;
+    let btn_check = document.getElementById('btn_chenk');
+    btn_check.innerHTML = str;
+
+    setTimeout(function(){
+      $('.btn_pic').remove();
+    },4000)
+  })
 }
+
+
+
+// 結算統計投票
+// todos.once('value', function (snapshot) {
+//   // console.log(snapshot.val());
+//   let arrayData = []
+//   let data = snapshot.val();
+//   for (item in data) {
+//     // console.log(data[item].d1);
+//     let datas = data[item].d_1;
+//     arrayData.push(datas)
+
+//   }
+//   console.log(arrayData);
+
+//   const total_count = arrayData.reduce((obj, item) => {
+//     if (item in obj) {
+
+//       obj[item]++
+//     } else {
+//       obj[item] = 1
+//     }
+//     return obj
+//   }, {})
+
+//   console.log(total_count)
+// })
