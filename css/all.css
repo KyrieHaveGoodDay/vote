@@ -994,6 +994,22 @@ body.board--show {
   width: 100%;
 }
 
+.vote form input[type="text"]::-webkit-input-placeholder {
+  padding-left: 10px;
+}
+
+.vote form input[type="text"]:-ms-input-placeholder {
+  padding-left: 10px;
+}
+
+.vote form input[type="text"]::-ms-input-placeholder {
+  padding-left: 10px;
+}
+
+.vote form input[type="text"]::placeholder {
+  padding-left: 10px;
+}
+
 .btn_send {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1017,7 +1033,6 @@ body.board--show {
 .btn_send .btn_pic {
   display: inline-block;
   position: relative;
-  border: 1px solid green;
   overflow: hidden;
 }
 

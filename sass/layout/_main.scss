@@ -33,6 +33,9 @@
         input[type="text"] {
             width: 100%;
         }
+        input[type="text"]::placeholder{
+            padding-left: 10px;
+        }
         
     }
 }
@@ -52,7 +55,7 @@
     .btn_pic{
         display: inline-block;
         position: relative;
-        border: 1px solid green;
+        // border: 1px solid green;
         overflow: hidden;
         img{
             width: 46px;
