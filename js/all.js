@@ -239,11 +239,13 @@ $('#send').on('click', function (e) {
       }else{
         $('.load-wrap').css('display','none');
         alert('查詢後，您已經投過票了。')
+        $("#vote_form")[0].reset();
         todoOff = true;
       }
     }else{
       $('.load-wrap').css('display','none');
       alert('查詢後，您沒有投票資格。')
+      $("#vote_form")[0].reset();
     }
 
     
@@ -266,14 +268,6 @@ function checkNum(Numid) {
 
       }
     }
-    // 查詢會員
-    // if (memberOff) {
-    //   memberOff = false;
-    //   // checkVote(Numid);
-    // } else {
-    //   alert('查詢後，您沒有投票資格。')
-      
-    // }
 
   })
 }
@@ -291,11 +285,6 @@ function checkVote(Numid) {
 
       }
     }
-    // console.log(todoOff);
-    // if (!todoOff) {
-    //   alert('查詢後，您已經投過票了。')
-    //   todoOff = true;
-    // } 
 
   })
 }
