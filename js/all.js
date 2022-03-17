@@ -237,10 +237,12 @@ $('#send').on('click', function (e) {
         vote(NumID,district1,district2,district3,district4,district5)
         // alert('投票成功，謝謝')
       }else{
+        $('.load-wrap').css('display','none');
         alert('查詢後，您已經投過票了。')
         todoOff = true;
       }
     }else{
+      $('.load-wrap').css('display','none');
       alert('查詢後，您沒有投票資格。')
     }
 
