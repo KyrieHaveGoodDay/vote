@@ -213,6 +213,7 @@ todos.once('value',function(snapshot){
 
 // 取值
 $('#send').on('click', function (e) {
+  $('.load-wrap').css('display','block');
   e.preventDefault();
   let NumID = $('#employeeID').val();
   let district1 = $('#district1').val();
@@ -309,6 +310,7 @@ function vote(Numid, d1, d2, d3, d4, d5) {
       d_5: d5,
     }
   ).then(function(){
+    $('.load-wrap').css('display','none');
     // vote_form
     $("#vote_form")[0].reset();
     let str = `
