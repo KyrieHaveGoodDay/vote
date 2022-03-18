@@ -193,8 +193,13 @@ const db = firebase.database();
 let member = db.ref('mainNum');
 // 確認是否有會員
 let memberOff = false;
+
+//會員區
+let mainNum = db.ref('mainNum');
+
 // 投票區
 let todos = db.ref('todos');
+
 // 確認是否有投過
 let todoOff = true;
 
@@ -261,7 +266,7 @@ function checkNum(Numid) {
 
     for (item in mainNum) {
       // console.log(mainNum[item].datas);
-      if (mainNum[item].datas == Numid) {
+      if (mainNum[item].data == Numid) {
         // console.log('有一樣');
         memberOff = true
         // console.log(memberOff);
@@ -350,3 +355,17 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 
 //   console.log(total_count)
 // })
+
+
+// 匯入員工編號進資料庫
+// let datas = [{"data":806285},
+// {"data":806222},
+// {"data":806351},
+// {"data":806435},
+// {"data":806118},
+// {"data":804532},
+// {"data":801238},
+// {"data":801003},
+// {"data":806019}];
+
+// mainNum.set(datas);
