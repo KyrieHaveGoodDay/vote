@@ -175,14 +175,14 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-  apiKey: "AIzaSyAtWTk6JPjzIDkiRGY0Od3fDSJjPzr9Gt8",
-  authDomain: "test-725c3.firebaseapp.com",
-  databaseURL: "https://test-725c3-default-rtdb.firebaseio.com",
-  projectId: "test-725c3",
-  storageBucket: "test-725c3.appspot.com",
-  messagingSenderId: "526890779679",
-  appId: "1:526890779679:web:d1d7da94ee82141befc12a",
-  measurementId: "G-GK36XDSR9T"
+    apiKey: "AIzaSyC2bZt2_nZl-X6CB47uMxWmItyxemvgEDE",
+    authDomain: "test-e242d.firebaseapp.com",
+    databaseURL: "https://test-e242d-default-rtdb.firebaseio.com",
+    projectId: "test-e242d",
+    storageBucket: "test-e242d.appspot.com",
+    messagingSenderId: "91328456872",
+    appId: "1:91328456872:web:7749cc80506ae987bdba9d",
+    measurementId: "G-5EE75VJKGW"
 };
 // Initialize Firebase
 let app = firebase.initializeApp(firebaseConfig);
@@ -191,6 +191,7 @@ const db = firebase.database();
 
 // 會員區
 let member = db.ref('mainNum');
+
 // 確認是否有會員
 let memberOff = false;
 
@@ -206,7 +207,7 @@ let todoOff = true;
 
 // 已投幾人
 // 頁面載入統計?
-todos.once('value',function(snapshot){
+todos.once('value', function (snapshot) {
   let data = snapshot.val();
   let dataNum = Object.keys(data).length;
   console.log(dataNum);
@@ -218,7 +219,7 @@ todos.once('value',function(snapshot){
 
 // 取值
 $('#send').on('click', function (e) {
-  $('.load-wrap').css('display','block');
+  $('.load-wrap').css('display', 'block');
   e.preventDefault();
   let NumID = $('#employeeID').val();
   let district1 = $('#district1').val();
@@ -227,35 +228,34 @@ $('#send').on('click', function (e) {
   let district4 = $('#district4').val();
   let district5 = $('#district5').val();
 
-  checkNum(NumID) 
-  checkVote(NumID) 
+  checkNum(NumID)
+  checkVote(NumID)
   setTimeout(function () {
     // console.log(memberOff);
     // console.log(todoOff);
-
     // 判斷是否有會員
-    if(memberOff){
+    if (memberOff) {
       memberOff = false;
       // 判斷是否投過票
-      if(todoOff){
+      if (todoOff) {
         // console.log('送出...');
-        vote(NumID,district1,district2,district3,district4,district5)
+        vote(NumID, district1, district2, district3, district4, district5)
         // alert('投票成功，謝謝')
-      }else{
-        $('.load-wrap').css('display','none');
+      } else {
+        $('.load-wrap').css('display', 'none');
         alert('查詢後，您已經投過票了。')
         $("#vote_form")[0].reset();
         todoOff = true;
       }
-    }else{
-      $('.load-wrap').css('display','none');
+    } else {
+      $('.load-wrap').css('display', 'none');
       alert('查詢後，您沒有投票資格。')
       $("#vote_form")[0].reset();
     }
 
-    
+
   }, 1000)
-  
+
 
 })
 
@@ -295,7 +295,7 @@ function checkVote(Numid) {
 }
 // 投票
 function vote(Numid, d1, d2, d3, d4, d5) {
- 
+
   todos.push(
     {
       numm: Numid,
@@ -305,8 +305,8 @@ function vote(Numid, d1, d2, d3, d4, d5) {
       d_4: d4,
       d_5: d5,
     }
-  ).then(function(){
-    $('.load-wrap').css('display','none');
+  ).then(function () {
+    $('.load-wrap').css('display', 'none');
     // vote_form
     $("#vote_form")[0].reset();
     let str = `
@@ -322,9 +322,9 @@ function vote(Numid, d1, d2, d3, d4, d5) {
     let btn_check = document.getElementById('btn_chenk');
     btn_check.innerHTML = str;
 
-    setTimeout(function(){
+    setTimeout(function () {
       $('.btn_pic').remove();
-    },4000)
+    }, 4000)
   })
 }
 
@@ -358,14 +358,14 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 
 
 // 匯入員工編號進資料庫
-// let datas = [{"data":806285},
-// {"data":806222},
-// {"data":806351},
-// {"data":806435},
-// {"data":806118},
-// {"data":804532},
-// {"data":801238},
-// {"data":801003},
-// {"data":806019}];
+// let datas = [{ "data": 806285 },
+// { "data": 806222 },
+// { "data": 806351 },
+// { "data": 806435 },
+// { "data": 806118 },
+// { "data": 804532 },
+// { "data": 801238 },
+// { "data": 801003 },
+// { "data": 806019 }];
 
 // mainNum.set(datas);
