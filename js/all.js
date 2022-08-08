@@ -175,14 +175,13 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-    apiKey: "AIzaSyC2bZt2_nZl-X6CB47uMxWmItyxemvgEDE",
-    authDomain: "test-e242d.firebaseapp.com",
-    databaseURL: "https://test-e242d-default-rtdb.firebaseio.com",
-    projectId: "test-e242d",
-    storageBucket: "test-e242d.appspot.com",
-    messagingSenderId: "91328456872",
-    appId: "1:91328456872:web:7749cc80506ae987bdba9d",
-    measurementId: "G-5EE75VJKGW"
+  apiKey: "AIzaSyD0QRE0tZs2dSKAGVmTKZOmi0mSqHrwdt8",
+  authDomain: "vote-f9e4d.firebaseapp.com",
+  projectId: "vote-f9e4d",
+  storageBucket: "vote-f9e4d.appspot.com",
+  messagingSenderId: "1072626044875",
+  appId: "1:1072626044875:web:f63763350a93020ebdf04e",
+  measurementId: "G-MR3DVRPR9X"
 };
 // Initialize Firebase
 let app = firebase.initializeApp(firebaseConfig);
@@ -330,7 +329,7 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 
 
 
-// 結算統計投票
+// 結算統計投票 只能一區一區統計 更改 datas的值
 // todos.once('value', function (snapshot) {
 //   // console.log(snapshot.val());
 //   let arrayData = []
@@ -358,14 +357,14 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 
 
 // 匯入員工編號進資料庫
-// let datas = [{ "data": 806285 },
-// { "data": 806222 },
-// { "data": 806351 },
-// { "data": 806435 },
-// { "data": 806118 },
-// { "data": 804532 },
-// { "data": 801238 },
-// { "data": 801003 },
-// { "data": 806019 }];
+let datas = [{ "data": 806285 },
+{ "data": 806222 },
+{ "data": 806351 },
+{ "data": 806435 },
+{ "data": 806118 },
+{ "data": 804532 },
+{ "data": 801238 },
+{ "data": 801003 },
+{ "data": 806019 }];
 
 // mainNum.set(datas);
