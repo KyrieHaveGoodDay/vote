@@ -98,94 +98,9 @@ var strImgDomain =  "//a.ecimg.tw" ;
     </div>
     <!-- E Header -->
 
-    <!-- S Left nav (desktop) -->
-    <div id="Menu" class="side-nav side-nav__left pc">
-      <!-- Left nav btn  -->
-      <div class="side-nav__btn">
-        <a href="javascript:;"></a>
-      </div>
-      <!-- Left nav board  -->
-      <div class="menu_box">
-        <!-- Left nav img -->
-        <div class="head"></div>
-        <!-- Left nav list -->
-        <div class="body">
-          <dl class="s_sub">
-            <dt class="s_sub__title">特色分會場</dt>
-            <dd>
-              <ul class="menu_list side-nav__list"></ul>
-            </dd>
-          </dl>
-          <dl class="s_main">
-            <dd>
-              <ul class="site_evt side-nav__list"></ul>
-            </dd>
-            <dd><a class="s_main__back">返回主會場</a></dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-    <!-- E Left nav (desktop) -->
 
-    <!-- S Footer board (mobile) -->
-    <div class="footer-board no-gutters">
-      <div id="MenuMobile" class="d-flex col-6 no-gutters">
-        <!-- main btn  -->
-        <div class="col-6 footer-board__btn" id="MainNavBarMobile"></div>
-        <!-- sub btn  -->
-        <div class="col-6 footer-board__btn" id="SubNavBarMobile" data-btn="board1">
-          <div id="SubMenuMobile" data-board="board1">
-            <ul></ul>
-          </div>
-        </div>
-      </div>
-      <!-- custom menu -->
-      <div class="custom-footer d-flex col-6 no-gutters">
-        <!-- icon3 -->
-        <div class="col-6 footer-board__btn">
-          <a href="https://savemoney.pchomeec.tw/" target="_blank">
-            <span class="txt">
-              <span class="ico"></span>優惠神算器
-            </span>
-          </a>
-        </div>
-        <!-- icon4 -->
-        <div class="col-6 footer-board__btn" data-btn="board2">
-          <a href="javascript:;">
-            <span class="txt">
-              <span class="ico"></span>追蹤我們
-            </span>
-          </a>
-        </div>
-      </div>
-      <!-- END custom menu -->
-      <a class="board--close" data-close="board1" href="javascript:;">
-        <div class="board--icon">
-          <img src="img/source/icon-sub.png">
-          <p>分會場</p>
-        </div>
-      </a>
-      <a class="board--close" data-close="board2" href="javascript:;">
-        <div class="board--icon">
-          <img src="img/source/icon-follow.png">
-          <p>追蹤我們</p>
-        </div>
-      </a>
-      <div class="board2" data-board="board2">
-        <ul>
-          <li><a href="https://www.facebook.com/pchome24h/?ref=bookmarks" target="_blank"><img
-                src="img/source/icon-fb-mb.png"></a></li>
-          <li><a href="https://www.instagram.com/pchome24h/" target="_blank"><img src="img/source/icon-ig-mb.png"></a>
-          </li>
-          <li><a href="https://line.me/R/ti/p/@pchome24h" target="_blank"><img src="img/source/icon-line-mb.png"></a>
-          </li>
-          <li><a href="https://www.youtube.com/channel/UCb2aGEzl5Ki5juwPolnC-PA"><img
-                src="img/source/icon-yt-mb.png"></a></li>
-        </ul>
-      </div>
 
-    </div>
-    <!-- E Footer board (mobile) -->
+   
 
     <!-- S Right nav -->
     <div class="side-nav side-nav__right">
@@ -232,47 +147,102 @@ var strImgDomain =  "//a.ecimg.tw" ;
       <div class="vote">
         <img class="main-1" src="img/main-1.png" alt="">
         <p class="form_title">請使用員工編號投票</p>
-        <p class="too">已投票人數 <span id="MainNum">0</span></p>
+        <div class="people_data">
+          <div class="peopleNum">
+            <div class="people_text">目前線上人數：</div>
+            <div class="nums  realtimeuserscounter "></div>
+            <div class="people_text">人</div>
+            
+          </div>
+          <p class="too">已投票人數 <span id="MainNum" class="nums">0</span>人</p>
+        </div>
+        
         <form id="vote_form" action="">
           <label for="employeeID">你的員工編號：</label> <br>
           <input type="text" name="" id="employeeID" placeholder="請輸入員工編號"> <br>
           <label for="district1">第一區：</label> <br>
           <select id="district1">
-            <option value="作品一">作品一</option>
-            <option value="作品二">作品二</option>
-            <option value="作品三">作品三</option>
-            <option value="作品四">作品四</option>
-            <option value="作品五">作品五</option>
-            <option value="作品六">作品六</option>
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+            <option value="A6">A6</option>
+            <option value="A7">A7</option>
+            <option value="A8">A8</option>
+            <option value="A9">A9</option>
+            <option value="A10">A10</option>
+            <option value="A11">A11</option>
+            <option value="A12">A12</option>
+            <option value="A13">A13</option>
+            <option value="A14">A14</option>
+            <option value="A15">A15</option>
+            <option value="A16">A16</option>
+            <option value="A17">A17</option>
+
+
           </select><br>
           <label for="district2">第二區：</label> <br>
           <select id="district2">
-            <option value="作品一">作品一</option>
-            <option value="作品二">作品二</option>
-            <option value="作品三">作品三</option>
-            <option value="作品四">作品四</option>
-            <option value="作品五">作品五</option>
-            <option value="作品六">作品六</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="B4">B4</option>
+            <option value="B5">B5</option>
+            <option value="B6">B6</option>
+            <option value="B7">B7</option>
+            <option value="B8">B8</option>
+            <option value="B9">B9</option>
+            <option value="B10">B10</option>
+            <option value="B11">B11</option>
+            <option value="B12">B12</option>
+            <option value="B13">B13</option>
+            <option value="B14">B14</option>
+            <option value="B15">B15</option>
+            <option value="B16">B16</option>
+            <option value="B17">B17</option>
           </select><br>
           <label for="district3">第三區：</label> <br>
           <select id="district3">
-            <option value="作品一">作品一</option>
-            <option value="作品二">作品二</option>
-            <option value="作品三">作品三</option>
-            <option value="作品四">作品四</option>
-            <option value="作品五">作品五</option>
-            <option value="作品六">作品六</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="C3">C3</option>
+            <option value="C4">C4</option>
+            <option value="C5">C5</option>
+            <option value="C6">C6</option>
+            <option value="C7">C7</option>
+            <option value="C8">C8</option>
+            <option value="C9">C9</option>
+            <option value="C10">C10</option>
+            <option value="C11">C11</option>
+            <option value="C12">C12</option>
+            <option value="C13">C13</option>
+            <option value="C14">C14</option>
+            <option value="C15">C15</option>
+            <option value="C16">C16</option>
+            <option value="C17">C17</option>
           </select><br>
           <label for="district4">第四區：</label> <br>
           <select id="district4">
-            <option value="作品一">作品一</option>
-            <option value="作品二">作品二</option>
-            <option value="作品三">作品三</option>
-            <option value="作品四">作品四</option>
-            <option value="作品五">作品五</option>
-            <option value="作品六">作品六</option>
+            <option value="D1">D1</option>
+            <option value="D2">D2</option>
+            <option value="D3">D3</option>
+            <option value="D4">D4</option>
+            <option value="D5">D5</option>
+            <option value="D6">D6</option>
+            <option value="D7">D7</option>
+            <option value="D8">D8</option>
+            <option value="D9">D9</option>
+            <option value="D10">D10</option>
+            <option value="D11">D11</option>
+            <option value="D12">D12</option>
+            <option value="D13">D13</option>
+            <option value="D14">D14</option>
+            <option value="D15">D15</option>
+            <option value="D16">D16</option>
+            <option value="D17">D17</option>
           </select><br>
-          <label for="district5">第五區：</label> <br>
+          <!-- <label for="district5">第五區：</label> <br>
           <select id="district5">
             <option value="作品一">作品一</option>
             <option value="作品二">作品二</option>
@@ -280,21 +250,16 @@ var strImgDomain =  "//a.ecimg.tw" ;
             <option value="作品四">作品四</option>
             <option value="作品五">作品五</option>
             <option value="作品六">作品六</option>
-          </select><br>
+          </select><br> -->
           <div class="btn_send">
             <input type="submit" id="send" value="送出">
             <div id="btn_chenk" class="btn_chenk">
-              <!-- <div class="btn_pic">
-                <img src="img/check.png" alt="">
-                <div class="pic_left"></div>
-                <div class="right_box">
-                  <div class="pic_right"></div>
-                </div>
-                <div class="hideCheck"></div>
-              </div> -->
+             
             </div>
           </div>
+          <div class="send_btn">投票後看到綠色勾勾，才算投票完成</div>
         </form>
+        
       </div>
     </div>
     <!-- E Main -->
@@ -354,7 +319,7 @@ var strImgDomain =  "//a.ecimg.tw" ;
 
   </div>
   <!-- E Wrap -->
-
+  <script src="https://realtimeusers.bycontrast.co/realtimeusers.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
   <!-- TODO: Add SDKs for Firebase products that you want to use

@@ -172,3 +172,30 @@
     display: block;
     margin: 0 auto;
 }
+.people_data{
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.people_text , .nums{
+    display: inline-block;
+}
+.nums{
+    background: #000;
+    color: #fff;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+.realtimeuserscounter__attr{
+    display: none !important;
+}
+
+.send_btn{
+    color: green;
+    text-align: center;
+    font-size: 12px;
+}

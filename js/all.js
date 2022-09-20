@@ -218,7 +218,7 @@ todos.once('value', function (snapshot) {
 
 // 取值
 $('#send').on('click', function (e) {
-  $('.load-wrap').css('display', 'block');
+  
   e.preventDefault();
   let NumID = $('#employeeID').val();
   let district1 = $('#district1').val();
@@ -226,34 +226,41 @@ $('#send').on('click', function (e) {
   let district3 = $('#district3').val();
   let district4 = $('#district4').val();
   let district5 = $('#district5').val();
-
-  checkNum(NumID)
-  checkVote(NumID)
-  setTimeout(function () {
-    // console.log(memberOff);
-    // console.log(todoOff);
-    // 判斷是否有會員
-    if (memberOff) {
-      memberOff = false;
-      // 判斷是否投過票
-      if (todoOff) {
-        // console.log('送出...');
-        vote(NumID, district1, district2, district3, district4, district5)
-        // alert('投票成功，謝謝')
+  
+  if (NumID === '') {
+    alert('請輸入員工編號！')
+  } else {
+    $('.load-wrap').css('display', 'block');
+    checkNum(NumID)
+    checkVote(NumID)
+    setTimeout(function () {
+      // console.log(memberOff);
+      // console.log(todoOff);
+      // 判斷是否有會員
+      if (memberOff) {
+        memberOff = false;
+        // 判斷是否投過票
+        if (todoOff) {
+          // console.log('送出...');
+          vote(NumID, district1, district2, district3, district4)
+          // alert('投票成功，謝謝')
+        } else {
+          $('.load-wrap').css('display', 'none');
+          alert('查詢後，您已經投過票了。')
+          $("#vote_form")[0].reset();
+          todoOff = true;
+        }
       } else {
         $('.load-wrap').css('display', 'none');
-        alert('查詢後，您已經投過票了。')
+        alert('查詢後，您沒有投票資格。')
         $("#vote_form")[0].reset();
-        todoOff = true;
       }
-    } else {
-      $('.load-wrap').css('display', 'none');
-      alert('查詢後，您沒有投票資格。')
-      $("#vote_form")[0].reset();
-    }
 
 
-  }, 1000)
+    }, 1000)
+  }
+
+
 
 
 })
@@ -293,7 +300,7 @@ function checkVote(Numid) {
   })
 }
 // 投票
-function vote(Numid, d1, d2, d3, d4, d5) {
+function vote(Numid, d1, d2, d3, d4) {
 
   todos.push(
     {
@@ -302,7 +309,7 @@ function vote(Numid, d1, d2, d3, d4, d5) {
       d_2: d2,
       d_3: d3,
       d_4: d4,
-      d_5: d5,
+
     }
   ).then(function () {
     $('.load-wrap').css('display', 'none');
@@ -336,12 +343,13 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 //   let data = snapshot.val();
 //   for (item in data) {
 //     // console.log(data[item].d1);
-//     let datas = data[item].d_1;
+//     let datas = data[item].d_3;
 //     arrayData.push(datas)
 
 //   }
 //   console.log(arrayData);
 
+//   // 統計結果
 //   const total_count = arrayData.reduce((obj, item) => {
 //     if (item in obj) {
 
@@ -357,14 +365,15 @@ function vote(Numid, d1, d2, d3, d4, d5) {
 
 
 // 匯入員工編號進資料庫
-let datas = [{ "data": 806285 },
-{ "data": 806222 },
-{ "data": 806351 },
-{ "data": 806435 },
-{ "data": 806118 },
-{ "data": 804532 },
-{ "data": 801238 },
-{ "data": 801003 },
-{ "data": 806019 }];
+// let datas = [{ "data": 806285 },
+// { "data": 806222 },
+// { "data": 806351 },
+// { "data": 806435 },
+// { "data": 806118 },
+// { "data": 804532 },
+// { "data": 801238 },
+// { "data": 801003 },
+// { "data": 806019 }];
 
 // mainNum.set(datas);
+
