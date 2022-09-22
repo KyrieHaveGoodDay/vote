@@ -153,7 +153,7 @@
     // init
     init() {
       this.data.windowWidth = $(window).width();
-      this.data.rightNavOffsetTop = $('.side-nav__right').offset().top;
+      // this.data.rightNavOffsetTop = $('.side-nav__right').offset().top;
 
       // event function
       this.windowScroll();
