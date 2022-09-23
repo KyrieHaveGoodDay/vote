@@ -117,7 +117,7 @@ var strImgDomain =  "//a.ecimg.tw" ;
         </div>
       </div>
       <div class="vote">
-        <img class="main-1" src="img/main-1.png" alt="">
+        <img class="main-1" style="pointer-events: none;" src="img/main-1.png" alt="">
         <p class="form_title">請使用員工編號投票</p>
         <div class="people_data">
           <div class="peopleNum">
@@ -282,7 +282,9 @@ var strImgDomain =  "//a.ecimg.tw" ;
   <script type="text/javascript" src="js/day.min.js"></script>
   <script type="text/javascript" src="js/all.js"></script>
   <script>
-
+    document.oncontextmenu = function(){
+    window.event.returnValue=false; //將滑鼠右鍵事件取消
+    }
 
   </script>
 </body>
