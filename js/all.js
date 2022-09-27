@@ -343,7 +343,7 @@ function vote(Numid, d1, d2, d3, d4) {
 //   let data = snapshot.val();
 //   for (item in data) {
 //     // console.log(data[item].d1);
-//     let datas = data[item].d_3;
+//     let datas = data[item].d_1;
 //     arrayData.push(datas)
 
 //   }
@@ -478,7 +478,9 @@ function vote(Numid, d1, d2, d3, d4) {
 // {"data":801754},
 // {"data":802208},
 // {"data":802313},
-// {"data":806285}]
+// {"data":806285},
+// {"data":806958},
+// {"data":801449}]
 
 // mainNum.set(datas);
 
